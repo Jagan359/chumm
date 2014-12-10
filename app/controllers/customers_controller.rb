@@ -25,6 +25,7 @@ redirect_to authorize_url
 #puts '2. Click "Allow" (you might have to log in first)'
 #puts '3. Copy the authorization code'
 #print 'Enter the authorization code here: '
+=begin 
 code = gets.strip
 access_token, user_id = flow.finish(code)
 client = DropboxClient.new(access_token)
@@ -34,9 +35,14 @@ response = client.put_file('/abc.txt', file)
   puts "****************************************************************************************************"
   file.close
 puts "uploaded:", response.inspect
+=end
+#GET authorize_url
 end 
 def oauth
-  code = params[:id]
+  code = params[:code]
+  puts "**************************************************************************"
+  puts code
+  puts "**************************************************************************"
 access_token, user_id = flow.finish(code)
 client = DropboxClient.new(access_token)
 puts "linked account:", client.account_info().inspect
