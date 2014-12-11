@@ -8,6 +8,11 @@ Rails.application.routes.draw do
    root 'customers#hmpg'
    get 'customers/index'
    post 'customers/oauth'
+   
+   
+get 'customers/googlstore'
+get 'customers/oauth2callback'
+
 get 'customers/oauth'
 
   # Example of regular route:
